@@ -584,7 +584,6 @@
                 <select name="cars" id="cars">
                     <option value="rgb" selected="selected">RGB</option>
                     <option value="blues">Blues</option>
-                    <option value="Green">Green</option>
                 </select>
             </form>
             <span class="v10_8">C</span>
@@ -601,7 +600,6 @@
     <script>
         var draw = document.getElementById('e11_472');
         draw.onclick = function () {
-            alert("start");
             var c = parseInt(document.getElementById('inc').value);
             var zoom = parseFloat(document.getElementById('inz').value);
             var k = 3;
@@ -612,18 +610,31 @@
                 var k = 4;
             }
             var color = false;
-            if (document.getElementById('cars').value == "RGB") {
-                color = true;
-            }
-            else {
+            if (document.getElementById('cars').value == "rgb") {
                 color = false;
             }
-            $.ajax(type: 'POST',
+            else {
+                color = true;
+            }
+            var data = {
+                c: c,
+                k: k,
+                zoom: zoom,
+                color: color
+            }
+            var url = "https://localhost:44322/Fractal/print/";
+            $.post(url, data, function () {
+                console.log("success");
+            })
+                .done(function () { console.log("second success"); })
+                .fail(function () { console.log("error"); })
+                .always(function () { console.log("finished"); location = location; });
+            /*$.ajax(type: 'POST',
                 dataType: 'json',
                 url: 'Fractal/print',
                 data: {
                 c: '1',
-                k: '4',
+                k: <img src="file:///C:\Users\admin\AppData\Local\Temp\09o8yrdi.bmp" />'4',
                 zoom: '2',
                 color: 'true'
                 },
@@ -633,9 +644,8 @@
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                     alert('error');
-                }); 
+                }); */
             
-            alert("end");
             
         }
 
