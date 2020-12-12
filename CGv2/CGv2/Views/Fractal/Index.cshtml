@@ -562,7 +562,7 @@
             <div class="v8_7"></div>
             <div class="v8_1"></div>
             <div class="name"></div>
-            <span class="v10_67">Color model</span>
+            <span class="v10_67">Color scheme</span>
             <input id="inc" class="v10_38" type="number" value="1" min="-1000" max="1000">
             <input id="inz" class="v10_79" type="number" value="1.1" step="0.1" min="0.1" max="10">
             <span class="v10_90">Scale</span>
@@ -587,7 +587,7 @@
                 </select>
             </form>
             <span class="v10_8">C</span>
-            <span class="v8_8">f(x) = x<sup>3</sup>+ 1</span>
+            <span class="v8_8">f(x) = x<sup ><span id="kdd">3</spanid="kdd"></sup ><span id="cdd">+ 1</span></span>
             <span class="v10_78">f(x) = x<sup>k</sup>+c</span>
             <div class="name"></div>
             <div class="name"></div>
@@ -598,6 +598,16 @@
     </div>
     <img id="canv" class="myCanvas" width="840" height="520" src="../../Resourses/images/Fractal.jpg">
     <script>
+        /*document.getElementById('k3').onclick = function () {
+            documnet.getElementById('kdd').inerHTML = "3";
+        }
+        document.getElementById('k4').onclick = function () {
+            documnet.getElementById('kdd').inerHTML = "4";
+        }
+        document.getElementById('inc').onchange = function () {
+            documnet.getElementById('cdd').inerHTML = "+" + document.getElementById('inc').value;
+        }*/
+        
         var draw = document.getElementById('e11_472');
         draw.onclick = function () {
             var c = parseInt(document.getElementById('inc').value);
