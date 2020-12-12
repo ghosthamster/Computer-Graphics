@@ -21,14 +21,40 @@ namespace CGv2.Controllers
         [Route("/")]
         public ActionResult Index()
         {
-            //Draw();
             return View();
         }
-        /*public ActionResult Index(int c,int k, double zoom)
+        [HttpPost]
+        [Route("convert")]
+        public ActionResult convert(string FilePath)
         {
-            Draw(c,k,zoom);
+            //add code
+            var cm = new ColorModelM();
+            cm.convertImg(FilePath);
             return View();
-        }*/
-
+        }
+        [HttpPost]
+        [Route("changebrightnes")]
+        public ActionResult changebrightnes(int brightnes,string color)
+        {
+            var cm = new ColorModelM();
+            cm.changebrightnes(brightnes,color);
+            return View();
+        }
+        [HttpPost]
+        [Route("saveimg")]
+        public ActionResult saveimg(string path)
+        {
+            //add code
+            return View();
+        }
+        [HttpGet]
+        [Route("pixel")]
+        public ActionResult pixel(int x,int y)
+        {
+            //add code
+            var cm = new ColorModelM();
+            //cm.convertImg(FilePath);
+            return View();
+        }
     }
 }
