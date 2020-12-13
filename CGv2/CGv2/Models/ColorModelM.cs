@@ -10,10 +10,10 @@ namespace CGv2.Models
     public class ColorModelM
     {
         public Bitmap bmp { get; set; }
-        public void convertImg(string path)
+        public void convertImg()
         {
+            string path = @"D:\projekt\Computer-Graphics\CGv2\CGv2\Resourses\images\rgb.jpg";
             bmp = (Bitmap)Bitmap.FromFile(path);
-            bmp.Save(@"D:\projekt\Computer-Graphics\CGv2\CGv2\Resourses\images\rgb.jpg");
             for (int x = 0; x < bmp.Width; x++)
             {
                 for (int y = 0; y < bmp.Height; y++)

@@ -78,3 +78,7 @@ D:\projekt\Computer-Graphics\CGv2\CGv2\obj\Debug\CGv2.csproj.CoreCompileInputs.c
 D:\projekt\Computer-Graphics\CGv2\CGv2\obj\Debug\CGv2.csproj.CopyComplete
 D:\projekt\Computer-Graphics\CGv2\CGv2\obj\Debug\CGv2.dll
 D:\projekt\Computer-Graphics\CGv2\CGv2\obj\Debug\CGv2.pdb
+D:\projekt\Computer-Graphics\CGv2\CGv2\bin\System.Net.Http.Formatting.dll
+D:\projekt\Computer-Graphics\CGv2\CGv2\bin\System.Web.Http.dll
+D:\projekt\Computer-Graphics\CGv2\CGv2\bin\System.Net.Http.Formatting.xml
+D:\projekt\Computer-Graphics\CGv2\CGv2\bin\System.Web.Http.xml
