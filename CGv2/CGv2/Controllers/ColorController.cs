@@ -25,12 +25,19 @@ namespace CGv2.Controllers
         }
         [HttpPost]
         [Route("convert")]
-        public ActionResult convert(string FilePath)
+        public ActionResult convert(HttpPostedFileBase postedFile)
         {
-            //add code
+            string filePath = "";
+            filePath = Server.MapPath("~/Resourses/images/");
+            if (postedFile == null)
+            {
+                postedFile = Request.Files["userFile"];
+            }
+            filePath = filePath +"rgb.jpg";
+            postedFile.SaveAs(filePath);
             var cm = new ColorModelM();
-            cm.convertImg(FilePath);
-            return View();
+            cm.convertImg();
+            return RedirectToAction("Index");
         }
         [HttpPost]
         [Route("changebrightnes")]
@@ -47,14 +54,21 @@ namespace CGv2.Controllers
             //add code
             return View();
         }
-        [HttpGet]
+        [HttpPost]
         [Route("pixel")]
-        public ActionResult pixel(int x,int y)
+        public point pixel(int r, int g, int b)
         {
             //add code
-            var cm = new ColorModelM();
-            //cm.convertImg(FilePath);
-            return View();
+            double h, s, l;
+            ColorModelM.RgbToHls(r, g, b, out h, out l, out s);
+            var p = new point() { h = h, l = l, s = s };
+            return p;
+        }
+        public class point
+        {
+            public double h { get; set; }
+            public double l { get; set; }
+            public double s { get; set; }
         }
     }
 }

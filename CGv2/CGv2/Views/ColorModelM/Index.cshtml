@@ -160,12 +160,25 @@
             color: #fff;
         }
 
-        .v130_44 {
-            width: 150px;
+        .v130_99 {
+            width: 300px;
             color: rgba(0,0,0,0.75);
             position: absolute;
-            top: 20px;
-            left: 24px;
+            top: 550px;
+            left: 650px;
+            font-family: Avenir;
+            font-weight: Medium;
+            font-size: 25px;
+            opacity: 1;
+            text-align: left;
+        }
+
+        .v130_98 {
+            width: 300px;
+            color: rgba(0,0,0,0.75);
+            position: absolute;
+            top: 220px;
+            left: 650px;
             font-family: Avenir;
             font-weight: Medium;
             font-size: 25px;
@@ -377,8 +390,10 @@
 </head>
 <body>
     <div class="v130_0">
-        <img id="myCanvas1" src="../../Resourses/images/rgb.jpg"></img>
-        <img id="myCanvas2" src="../../Resourses/images/HSLColor.jpg"></img>
+         <img id="myCanvas2" src="../../Resourses/images/rgb.jpg"></img>
+            <img id="myCanvas1" src="../../Resourses/images/HSLColor.jpg"></img>
+        <span class="v130_99" id="v130_99">HSL</span>
+        <span class="v130_98" id="v130_98">RGB</span>
         <span class="v130_8">Color model</span>
         <div class="v130_9">
             <div class="v130_10">
@@ -388,8 +403,13 @@
         <div class="v130_12">
             <div class="v130_13"></div>
             <span class="v130_44">Brightness</span>
-            <input id="inc" class="v10_38" type="number" value="1" min="0" max="100">
-            <input type='file' class="v130_20" id="file" />
+            <input id="inc" class="v10_38" type="number" value="50" min="0" max="100">
+            @using (Html.BeginForm("convert", "ColorModelM",FormMethod.Post,new { enctype = "multipart/form-data" }))
+            {
+                <input type="file" id="userFIle" name="userFile" class="v130_20" />
+                <input type="submit" value="Upload" class="v130_53"/>
+            }
+
             <div class="v130_49" id="v130_49">
                 <span class="v130_53">Draw</span>
             </div>
@@ -397,7 +417,7 @@
                 <div class="v130_51" id="v130_51">
                     <span class="v130_52">Save image </span>
                 </div>
-                </a>
+            </a>
         </div>
         <div class="v130_55">
             <div class="v130_56"></div>
@@ -405,21 +425,20 @@
             <div class="v130_58"></div>
         </div>
         <span class="v130_73">HSL</span>
-        <span class="v130_74">RGB</span>
+        <span class="v130_74" id="v130_74">RGB</span>
     </div>
-    <script>
-        window.addEventListener('load', function () {
+    <script>window.addEventListener('load', function () {
             document.querySelector('input[type="file"]').addEventListener('change', function () {
                 if (this.files && this.files[0]) {
-                    var img = document.getElementById('myCanvas1');
+                    /*var img = document.getElementById('myCanvas2');
                     img.src = URL.createObjectURL(this.files[0]);
                     var path = this.files[0].mozFullPath;
                     var img1 = document.getElementById('myCanvas2');
-                    img1.src = URL.createObjectURL(this.files[0]);
+                    img1.src = URL.createObjectURL(this.files[0]);*/
 
                     var fd = new FormData();
-                    fd.append('file', input.files[0]);
-                    var url = 'https://localhost:44322/ColorModelM/convert';
+                    fd.append('file', this.files[0]);
+                    var url = 'https://localhost:44322/Upload/';
                     $.ajax({
                         url: url,
                         data: fd,
@@ -431,13 +450,6 @@
                         }
                     });
 
-                    var url = "https://localhost:44322/Fractal/print/";
-                    $.post(url, data, function () {
-                        console.log("success");
-                    })
-                        .done(function () { console.log("second success"); })
-                        .fail(function () { console.log("error"); })
-                        .always(function () { console.log("finished"); location = location; });
                 }
             });
         });
@@ -456,8 +468,62 @@
                 .fail(function () { console.log("error"); })
                 .always(function () { console.log("finished"); location = location; });
         }
-        
-    </script>
+
+        function rgbToHsl(r, g, b) {
+            r /= 255, g /= 255, b /= 255;
+            var max = Math.max(r, g, b),
+                min = Math.min(r, g, b);
+            var h, s, l = (max + min) / 2;
+
+            if (max == min) {
+                h = s = 0; // achromatic
+            } else {
+                var d = max - min;
+                s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                switch (max) {
+                    case r:
+                        h = (g - b) / d + (g < b ? 6 : 0);
+                        break;
+                    case g:
+                        h = (b - r) / d + 2;
+                        break;
+                    case b:
+                        h = (r - g) / d + 4;
+                        break;
+                }
+                h /= 6;
+            }
+
+            return ({
+                h: h,
+                s: s,
+                l: l,
+            });
+        }
+
+        var image1 = document.getElementById('myCanvas2');
+        image1.onclick = function () {
+            var canvas = document.createElement('canvas');
+            canvas.width = image1.width;
+            canvas.height = image1.height;
+            canvas.getContext('2d').drawImage(image1, 0, 0, image1.width, image1.height);
+            var pixelData = canvas.getContext('2d').getImageData(event.offsetX, event.offsetY, 1, 1).data;
+            var text = document.getElementById('v130_98');
+            text.innerHTML = "r = " + pixelData[0] + " g = " + pixelData[1] + " b = " + pixelData[2];
+        }
+
+        var image2 = document.getElementById('myCanvas1');
+        image2.onclick = function () {
+            var canvas = document.createElement('canvas');
+            canvas.width = image2.width;
+            canvas.height = image2.height;
+            canvas.getContext('2d').drawImage(image2, 0, 0, image2.width, image2.height);
+            var pixelData = canvas.getContext('2d').getImageData(event.offsetX, event.offsetY, 1, 1).data;
+            var text = document.getElementById('v130_99');
+            var hsl = rgbToHsl(pixelData[0], pixelData[1], pixelData[2]);
+            var hue = hsl.h * 360;
+            text.innerHTML = "h = " + hue + " s = " + hsl.s + " l = " + hsl.l;
+        }
+</script>
 </body>
 </html>
-
