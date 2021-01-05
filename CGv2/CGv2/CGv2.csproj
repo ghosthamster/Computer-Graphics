@@ -131,6 +131,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AffinController.cs" />
     <Compile Include="Controllers\ColorController.cs" />
     <Compile Include="Controllers\FractalController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -181,6 +182,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Fractal\Index.cshtml" />
     <Content Include="Views\ColorModelM\Index.cshtml" />
+    <Content Include="Views\Affin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
