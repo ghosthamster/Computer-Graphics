@@ -1,0 +1,573 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Avenir&display=swap" rel="stylesheet" />
+    <link href="./css/main.css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <style>
+        * {
+            overflow-x: hidden;
+            padding: 0px !important;
+            margin: 0px !important;
+        }
+
+        .v10_91 {
+            width: 100%;
+            height: 900px;
+            background: rgba(239,241,244,1);
+            padding: 10px 10px;
+            margin: 10px;
+            opacity: 1;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            overflow: hidden;
+        }
+
+        .v10_94 {
+            width: 840px;
+            height: 481px;
+            opacity: 1;
+            position: absolute;
+            top: 162px;
+            left: 289px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            overflow: hidden;
+        }
+
+        .v11_135 {
+            width: 332px;
+            color: rgba(0,0,0,0.75);
+            position: absolute;
+            top: 22px;
+            left: 447px;
+            font-family: Avenir;
+            font-weight: Black;
+            font-size: 36px;
+            opacity: 1;
+            text-align: left;
+        }
+
+        .v11_250 {
+            width: 332px;
+            color: rgba(0,0,0,0.75);
+            position: absolute;
+            top: 22px;
+            left: 447px;
+            font-family: Avenir;
+            font-weight: Black;
+            font-size: 36px;
+            opacity: 1;
+            text-align: left;
+        }
+
+        .v11_137 {
+            width: 140px;
+            height: 41px;
+            background: url("../images/v11_137.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            opacity: 1;
+            position: absolute;
+            top: 27px;
+            left: 23px;
+            overflow: hidden;
+        }
+
+        .v11_138 {
+            width: 30px;
+            height: 39px;
+            background: url("../images/v11_138.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            opacity: 0.7400000095367432;
+            position: absolute;
+            top: 1px;
+            left: 0px;
+            overflow: hidden;
+        }
+
+        .v11_139 {
+            width: 103px;
+            color: rgba(0,0,0,0.75);
+            position: absolute;
+            top: 0px;
+            left: 37px;
+            font-family: Avenir;
+            font-weight: Book;
+            font-size: 30px;
+            opacity: 1;
+            text-align: left;
+        }
+
+        .v11_141 {
+            width: 270px;
+            height: 900px;
+            background: url("../images/v11_141.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            opacity: 1;
+            position: absolute;
+            top: 84px;
+            left: 0px;
+            overflow: hidden;
+            background: rgba(229,230,239,1);
+            border: 1px solid rgba(0,0,0,0.5);
+            border-top-right-radius: 10px;
+        }
+
+        .v11_402 {
+            width: 198px;
+            color: rgba(0,0,0,0.75);
+            position: absolute;
+            top: 493px;
+            left: 23px;
+            font-family: Avenir;
+            font-weight: Medium;
+            font-size: 25px;
+            opacity: 1;
+            text-align: left;
+        }
+
+        .v11_241 {
+            width: 92px;
+            height: 36px;
+            opacity: 1;
+            position: absolute;
+            top: 420px;
+            left: 41px;
+            overflow: hidden;
+            font-family: Avenir;
+            font-weight: Book;
+            font-size: 18px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        .v11_213 {
+            width: 92px;
+            height: 36px;
+            background: rgba(255,255,255,1);
+            opacity: 1;
+            position: absolute;
+            font-family: Avenir;
+            font-weight: Book;
+            font-size: 18px;
+            top: 180px;
+            left: 41px;
+            overflow: hidden;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        .v11_222 {
+            width: 60px;
+            color: rgba(0,0,0,0.6000000238418579);
+            position: absolute;
+            top: 38px;
+            left: 101px;
+            font-family: Avenir;
+            font-weight: Book;
+            font-size: 18px;
+            opacity: 1;
+            text-align: left;
+        }
+
+        .v11_189 {
+            width: 92px;
+            height: 36px;
+            opacity: 1;
+            position: absolute;
+            top: 69px;
+            left: 41px;
+            overflow: hidden;
+            font-family: Avenir;
+            font-weight: Book;
+            font-size: 18px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        .v11_145 {
+            width: 198px;
+            color: rgba(0,0,0,0.75);
+            position: absolute;
+            top: 378px;
+            left: 23px;
+            font-family: Avenir;
+            font-weight: Medium;
+            font-size: 25px;
+            opacity: 1;
+            text-align: left;
+        }
+
+        .v11_146 {
+            width: 92px;
+            height: 36px;
+            background: rgba(255,255,255,1);
+            opacity: 1;
+            position: absolute;
+            top: 308px;
+            left: 41px;
+            overflow: hidden;
+            font-family: Avenir;
+            font-weight: Book;
+            font-size: 18px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        .v11_166 {
+            width: 200px;
+            color: rgba(0,0,0,0.75);
+            position: absolute;
+            top: 124px;
+            left: 23px;
+            font-family: Avenir;
+            font-weight: Medium;
+            font-size: 25px;
+            opacity: 1;
+            text-align: left;
+        }
+
+        .v11_167 {
+            width: 59px;
+            color: rgba(0,0,0,0.75);
+            position: absolute;
+            top: 252px;
+            left: 23px;
+            font-family: Avenir;
+            font-weight: Medium;
+            font-size: 25px;
+            opacity: 1;
+            text-align: left;
+        }
+
+        .v11_171 {
+            width: 200px;
+            color: rgba(0,0,0,0.75);
+            position: absolute;
+            top: 22px;
+            left: 23px;
+            font-family: Avenir;
+            font-weight: Medium;
+            font-size: 25px;
+            opacity: 1;
+            text-align: left;
+        }
+
+        .v11_408 {
+            width: 8px;
+            height: 16px;
+            background: rgba(255,255,255,1);
+            opacity: 1;
+            position: absolute;
+            top: 631px;
+            left: 172px;
+            overflow: hidden;
+        }
+
+        .v27_38 {
+            width: 66px;
+            height: 60px;
+            background: url("../images/v27_38.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            opacity: 1;
+            position: absolute;
+            top: 16px;
+            left: 1063px;
+            overflow: hidden;
+        }
+
+        .v27_39 {
+            width: 66px;
+            height: 60px;
+            background: rgba(226,226,226,1);
+            opacity: 1;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            border-radius: 50%;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .v27_40 {
+            width: 10px;
+            height: 10px;
+            background: rgba(196,196,196,1);
+            opacity: 1;
+            position: absolute;
+            top: 14px;
+            left: 28px;
+            border-radius: 50%;
+        }
+
+        .v27_41 {
+            width: 8px;
+            height: 23px;
+            background: rgba(196,196,196,1);
+            opacity: 1;
+            position: absolute;
+            top: 26px;
+            left: 29px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            overflow: hidden;
+        }
+
+        .dropdown {
+            width: 122px;
+            color: .black;
+            border-radius: 4px;
+            position: absolute;
+            top: 537px;
+            left: 40px;
+            opacity: 1;
+        }
+
+        .v130_49 {
+            width: 242px;
+            height: 44px;
+            background: rgba(28,73,121,1);
+            padding: 8px 16px;
+            margin: 4px;
+            opacity: 1;
+            position: absolute;
+            top: 625px;
+            left: 12px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+
+        .v130_53 {
+            width: 88px;
+            color: rgba(255,255,255,1);
+            position: absolute;
+            top: 12px;
+            left: 95px;
+            font-family: Avenir;
+            font-weight: Book;
+            font-size: 17px;
+            opacity: 1;
+            text-align: left;
+        }
+        /* Popup box BEGIN */
+        .hover_bkgr_fricc {
+            background: rgba(0,0,0,.4);
+            cursor: pointer;
+            display: none;
+            height: 100%;
+            position: fixed;
+            text-align: center;
+            top: 0;
+            width: 100%;
+            z-index: 10000;
+        }
+
+            .hover_bkgr_fricc .helper {
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+            }
+
+            .hover_bkgr_fricc > div {
+                background-color: #fff;
+                box-shadow: 10px 10px 60px #555;
+                display: inline-block;
+                height: auto;
+                max-width: 551px;
+                min-height: 100px;
+                vertical-align: middle;
+                width: 60%;
+                position: relative;
+                border-radius: 8px;
+                padding: 15px 5%;
+            }
+
+        .popupCloseButton {
+            background-color: #fff;
+            border: 3px solid #999;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-block;
+            font-family: arial;
+            font-weight: bold;
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 25px;
+            line-height: 30px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
+
+            .popupCloseButton:hover {
+                background-color: #ccc;
+            }
+
+        .trigger_popup_fricc {
+            cursor: pointer;
+            font-size: 20px;
+            margin: 20px;
+            display: inline-block;
+            font-weight: bold;
+        }
+        /* Popup box BEGIN */
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="v10_91">
+        <span class="v11_135">Hexagon transform</span>
+        <span class="v11_250">Hexagon transform</span>
+
+        <div class="v11_141">
+            <div class="v130_49" id="v130_49">
+                <span class="v130_53">Draw</span>
+            </div>
+            <span class="v11_402">Rotate point</span>
+            <form action="/action_page.php" class="dropdown">
+                <select name="cars" id="cars">
+                    <option value="center" selected="selected">Center</option>
+                    <option value="point1">Point 1</option>
+                    <option value="point2">Point 2</option>
+                    <option value="point3">Point 3</option>
+                    <option value="point4">Point 4</option>
+                    <option value="point5">Point 5</option>
+                    <option value="point6">Point 6</option>
+                </select>
+            </form>
+            <span class="v11_145">Rotate, °</span>
+            <input id="rotate" class="v11_241" type="number" value="0" step="1" min="0" max="180">
+            <span class="v11_166">Short radius, mm</span>
+            <input id="radius" class="v11_213" type="number" value="20" min="0" max="100">
+            <span class="v11_167">Scale</span>
+            <input id="scale" class="v11_146" type="number" value="1.1" step="0.1" min="0.1" max="10">
+            <span class="v11_171">Side, mm</span>
+            <input id="side" class="v11_189" type="number" value="20" min="0" max="100">
+        </div>
+        <canvas class="v10_94" id="canvas"></canvas>
+        <div class="v27_38" id="v27_38">
+            <div class="v27_39"></div>
+            <div class="v27_40"></div>
+            <div class="v27_41"></div>
+        </div>
+    </div>
+    <div class="hover_bkgr_fricc" id="hover_bkgr_fricc">
+        <span class="helper" id="helper"></span>
+        <div>
+            <div class="popupCloseButton" id="popupCloseButton">&times;</div>
+            <p>
+                In Euclidean geometry, an affine transformation, or an affinity (from the Latin, affinis, "connected with"), is a geometric transformation that preserves lines and parallelism (but not necessarily distances and angles).
+                More generally, an affine transformation is an automorphism of an affine space (Euclidean spaces are specific affine spaces), that is, a function which maps an affine space onto itself while preserving both the dimension of any affine subspaces (meaning that it sends points to points, lines to lines, planes to planes, and so on) and the ratios of the lengths of parallel line segments. Consequently, sets of parallel affine subspaces remain parallel after an affine transformation. An affine transformation does not necessarily preserve angles between lines or distances between points, though it does preserve ratios of distances between points lying on a straight line.
+                If X is the point set of an affine space, then every affine transformation on X can be represented as the composition of a linear transformation on X and a translation of X. Unlike a purely linear transformation, an affine transformation need not preserve the origin of the affine space. Thus, every linear transformation is affine, but not every affine transformation is linear.
+                Examples of affine transformations include translation, scaling, homothety, similarity, reflection, rotation, shear mapping, and compositions of them in any combination and sequence.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('v27_38').onclick = function () {
+            document.getElementById('hover_bkgr_fricc').style.display = 'block';
+        }
+        document.getElementById('hover_bkgr_fricc').onclick = function () {
+            document.getElementById('hover_bkgr_fricc').style.display = 'none';
+        }
+        document.getElementById('popupCloseButton').onclick = function () {
+            document.getElementById('hover_bkgr_fricc').style.display = 'none';
+        }
+        var drawbutton = document.getElementById('v130_49');
+        var canvas = document.querySelector('#canvas').getContext('2d');
+        drawbutton.onclick = function () {
+            var side = 0,
+                size = 50,
+                x = 70,
+                y = 70;
+
+            canvas.moveTo(x + size * Math.cos(0), y + size * Math.sin(0));
+            canvas.clearRect(0, 0, 840, 481);
+            canvas.beginPath();
+            size = parseInt(document.getElementById('side').value);
+            var radius = parseInt(document.getElementById('radius').value);
+            var scale = parseFloat(document.getElementById('scale').value);
+            var rotate = parseInt(document.getElementById('rotate').value);
+            var point = document.getElementById('cars').value;
+            var xp, yp;
+            switch (point) {
+                case 'center':
+                    xp = 0;
+                    yp = 0;
+                    break;
+                case 'point1':
+                    xp = size * Math.cos(1 * 2 * Math.PI / 6);
+                    yp = size * Math.sin(1 * 2 * Math.PI / 6);
+                    break;
+                case 'point2':
+                    xp = size * Math.cos(2 * 2 * Math.PI / 6);
+                    yp = size * Math.sin(2 * 2 * Math.PI / 6);
+                    break;
+                case 'point3':
+                    xp = size * Math.cos(3 * 2 * Math.PI / 6);
+                    yp = size * Math.sin(3 * 2 * Math.PI / 6);
+                    break;
+                case 'point4':
+                    xp = size * Math.cos(4 * 2 * Math.PI / 6);
+                    yp = size * Math.sin(4 * 2 * Math.PI / 6);
+                    break;
+                case 'point5':
+                    xp = size * Math.cos(5 * 2 * Math.PI / 6);
+                    yp = size * Math.sin(5 * 2 * Math.PI / 6);
+                    break;
+                case 'point6':
+                    xp = size * Math.cos(6 * 2 * Math.PI / 6);
+                    yp = size * Math.sin(6 * 2 * Math.PI / 6);
+                    break;
+            }
+            var xi, yi;
+            var xX, yX;
+            for (side; side < 7; side++) {
+                xi = size * Math.cos(side * 2 * Math.PI / 6) - xp;
+                yi = size * Math.sin(side * 2 * Math.PI / 6) - yp;
+                xX = xi * Math.cos(rotate * Math.PI / 180) - yi * Math.sin(rotate * Math.PI / 180);
+                yX = xi * Math.sin(rotate * Math.PI / 180) + yi * Math.cos(rotate * Math.PI / 180);
+                canvas.lineTo(xX * scale + x + xp, yX * scale + y + yp);
+            }
+            canvas.fillStyle = "#333333";
+            canvas.fill();
+            console.log("/////");
+        }
+
+    </script>
+
+
+</body>
+</html>
+

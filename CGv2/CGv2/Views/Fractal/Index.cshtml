@@ -7,6 +7,7 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Avenir&display=swap" rel="stylesheet" />
     <style>
+
         * {
             overflow-x: hidden;
             padding: 0px !important;
@@ -552,6 +553,69 @@
             left: 40px;
             opacity: 1;
         }
+        /* Popup box BEGIN */
+        .hover_bkgr_fricc {
+            background: rgba(0,0,0,.4);
+            cursor: pointer;
+            display: none;
+            height: 100%;
+            position: fixed;
+            text-align: center;
+            top: 0;
+            width: 100%;
+            z-index: 10000;
+        }
+
+            .hover_bkgr_fricc .helper {
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+            }
+
+            .hover_bkgr_fricc > div {
+                background-color: #fff;
+                box-shadow: 10px 10px 60px #555;
+                display: inline-block;
+                height: auto;
+                max-width: 551px;
+                min-height: 100px;
+                vertical-align: middle;
+                width: 60%;
+                position: relative;
+                border-radius: 8px;
+                padding: 15px 5%;
+            }
+
+        .popupCloseButton {
+            background-color: #fff;
+            border: 3px solid #999;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-block;
+            font-family: arial;
+            font-weight: bold;
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 25px;
+            line-height: 30px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
+
+            .popupCloseButton:hover {
+                background-color: #ccc;
+            }
+
+        .trigger_popup_fricc {
+            cursor: pointer;
+            font-size: 20px;
+            margin: 20px;
+            display: inline-block;
+            font-weight: bold;
+        }
+        /* Popup box BEGIN */
     </style>
 </head>
 <body>
@@ -587,85 +651,108 @@
                 </select>
             </form>
             <span class="v10_8">C</span>
-            <span class="v8_8">f(x) = x<sup ><span id="kdd">3</spanid="kdd"></sup ><span id="cdd">+ 1</span></span>
+            <span class="v8_8">f(x) = x<sup><span id="kdd">3</spanid="kdd"></sup><span id="cdd">+ 1</span></span>
             <span class="v10_78">f(x) = x<sup>k</sup>+c</span>
             <div class="name"></div>
             <div class="name"></div>
             <div class="name"></div>
             <div class="name"></div>
             <div class="name"></div>
-        <div id="e11_472"><span id="e11_473">Draw fractal</span></div>
-    </div>
-    <img id="canv" class="myCanvas" width="840" height="520" src="../../Resourses/images/Fractal.jpg">
-    <script>
-        /*document.getElementById('k3').onclick = function () {
-            documnet.getElementById('kdd').inerHTML = "3";
-        }
-        document.getElementById('k4').onclick = function () {
-            documnet.getElementById('kdd').inerHTML = "4";
-        }
-        document.getElementById('inc').onchange = function () {
-            documnet.getElementById('cdd').inerHTML = "+" + document.getElementById('inc').value;
-        }*/
-        
-        var draw = document.getElementById('e11_472');
-        draw.onclick = function () {
-            var c = parseInt(document.getElementById('inc').value);
-            var zoom = parseFloat(document.getElementById('inz').value);
-            var k = 3;
-            if (document.getElementById('k3').checked) {
-                var k = 3;
-            }
-            else {
-                var k = 4;
-            }
-            var color = false;
-            if (document.getElementById('cars').value == "rgb") {
-                color = false;
-            }
-            else {
-                color = true;
-            }
-            var data = {
-                c: c,
-                k: k,
-                zoom: zoom,
-                color: color
-            }
-            var url = "https://localhost:44322/Fractal/print/";
-            $.post(url, data, function () {
-                console.log("success");
-            })
-                .done(function () { console.log("second success"); })
-                .fail(function () { console.log("error"); })
-                .always(function () { console.log("finished"); location = location; });
-            /*$.ajax(type: 'POST',
-                dataType: 'json',
-                url: 'Fractal/print',
-                data: {
-                c: '1',
-                k: <img src="file:///C:\Users\admin\AppData\Local\Temp\09o8yrdi.bmp" />'4',
-                zoom: '2',
-                color: 'true'
-                },
-                success: function (Data) {
-                    alert('OK');
-                    document.getElementById('canv').src = "../../Resourses/images/Fractal.jpg";
-                },
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    alert('error');
-                }); */
-            
-            
-        }
+            <div id="e11_472"><span id="e11_473">Draw fractal</span></div>
+        </div>
+        <img id="canv" class="myCanvas" width="840" height="520" src="../../Resourses/images/Fractal.jpg">
 
-    </script>
-    <div class="v11_136"><div class="v8_3"></div><span class="v11_11">Back</span></div>
-    <div class="v27_29">
-        <div class="v27_22"></div>
-        <div class="v27_27"></div>
-        <div class="v27_28"></div>
-    </div>
+        <div class="v27_29" id="v27_29">
+            <div class="v27_22"></div>
+            <div class="v27_27"></div>
+            <div class="v27_28"></div>
+        </div>
+
+        <div class="hover_bkgr_fricc" id="hover_bkgr_fricc">
+            <span class="helper" id="helper"></span>
+            <div>
+                <div class="popupCloseButton" id="popupCloseButton">&times;</div>
+                <p>
+                    The word "fractal" often has different connotations for the lay public as opposed to mathematicians, where the public is more likely to be familiar with fractal art than the mathematical concept. The mathematical concept is difficult to define formally, even for mathematicians, but key features can be understood with a little mathematical background.
+
+                    The feature of "self-similarity", for instance, is easily understood by analogy to zooming in with a lens or other device that zooms in on digital images to uncover finer, previously invisible, new structure. If this is done on fractals, however, no new detail appears; nothing changes and the same pattern repeats over and over, or for some fractals, nearly the same pattern reappears over and over. Self-similarity itself is not necessarily counter-intuitive (e.g., people have pondered self-similarity informally such as in the infinite regress in parallel mirrors or the homunculus, the little man inside the head of the little man inside the head ...). The difference for fractals is that the pattern reproduced must be detailed
+                </p>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById('v27_29').onclick = function () {
+                document.getElementById('hover_bkgr_fricc').style.display = 'block';
+            }
+            document.getElementById('hover_bkgr_fricc').onclick = function () {
+                document.getElementById('hover_bkgr_fricc').style.display = 'none';
+            }
+            document.getElementById('popupCloseButton').onclick = function () {
+                document.getElementById('hover_bkgr_fricc').style.display = 'none';
+            }
+            /*document.getElementById('k3').onclick = function () {
+                documnet.getElementById('kdd').inerHTML = "3";
+            }
+            document.getElementById('k4').onclick = function () {
+                documnet.getElementById('kdd').inerHTML = "4";
+            }
+            document.getElementById('inc').onchange = function () {
+                documnet.getElementById('cdd').inerHTML = "+" + document.getElementById('inc').value;
+            }*/
+
+            var draw = document.getElementById('e11_472');
+            draw.onclick = function () {
+                var c = parseInt(document.getElementById('inc').value);
+                var zoom = parseFloat(document.getElementById('inz').value);
+                var k = 3;
+                if (document.getElementById('k3').checked) {
+                    var k = 3;
+                }
+                else {
+                    var k = 4;
+                }
+                var color = false;
+                if (document.getElementById('cars').value == "rgb") {
+                    color = false;
+                }
+                else {
+                    color = true;
+                }
+                var data = {
+                    c: c,
+                    k: k,
+                    zoom: zoom,
+                    color: color
+                }
+                var url = "https://localhost:44322/Fractal/print/";
+                $.post(url, data, function () {
+                    console.log("success");
+                })
+                    .done(function () { console.log("second success"); })
+                    .fail(function () { console.log("error"); })
+                    .always(function () { console.log("finished"); location = location; });
+                /*$.ajax(type: 'POST',
+                    dataType: 'json',
+                    url: 'Fractal/print',
+                    data: {
+                    c: '1',
+                    k: <img src="file:///C:\Users\admin\AppData\Local\Temp\09o8yrdi.bmp" />'4',
+                    zoom: '2',
+                    color: 'true'
+                    },
+                    success: function (Data) {
+                        alert('OK');
+                        document.getElementById('canv').src = "../../Resourses/images/Fractal.jpg";
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert('error');
+                    }); */
+
+
+            }
+
+        </script>
+
     </div>
 </body>
 </html>

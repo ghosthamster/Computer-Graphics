@@ -3,6 +3,8 @@
     ViewBag.Title = "ColorModelM";
 }
 
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -277,6 +279,19 @@
             text-align: left;
         }
 
+        .v130_54 {
+            width: 88px;
+            color: rgba(255,255,255,1);
+            position: absolute;
+            top: 390px;
+            left: 40px;
+            font-family: Avenir;
+            font-weight: Book;
+            font-size: 17px;
+            opacity: 1;
+            text-align: left;
+        }
+
         .v10_38 {
             top: 80px;
             left: 40px;
@@ -335,6 +350,19 @@
             border-radius: 50%;
         }
 
+        .v130_44 {
+            width: 213px;
+            color: rgba(0,0,0,1);
+            position: absolute;
+            top: 30px;
+            left: 21px;
+            font-family: Avenir;
+            font-weight: Book;
+            font-size: 18px;
+            opacity: 1;
+            text-align: left;
+        }
+
         .v130_58 {
             width: 8px;
             height: 23px;
@@ -386,29 +414,89 @@
             left: 40px;
             opacity: 1;
         }
+
+        /* Popup box BEGIN */
+        .hover_bkgr_fricc {
+            background: rgba(0,0,0,.4);
+            cursor: pointer;
+            display: none;
+            height: 100%;
+            position: fixed;
+            text-align: center;
+            top: 0;
+            width: 100%;
+            z-index: 10000;
+        }
+
+            .hover_bkgr_fricc .helper {
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+            }
+
+            .hover_bkgr_fricc > div {
+                background-color: #fff;
+                box-shadow: 10px 10px 60px #555;
+                display: inline-block;
+                height: auto;
+                max-width: 551px;
+                min-height: 100px;
+                vertical-align: middle;
+                width: 60%;
+                position: relative;
+                border-radius: 8px;
+                padding: 15px 5%;
+            }
+
+        .popupCloseButton {
+            background-color: #fff;
+            border: 3px solid #999;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-block;
+            font-family: arial;
+            font-weight: bold;
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 25px;
+            line-height: 30px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
+
+            .popupCloseButton:hover {
+                background-color: #ccc;
+            }
+
+        .trigger_popup_fricc {
+            cursor: pointer;
+            font-size: 20px;
+            margin: 20px;
+            display: inline-block;
+            font-weight: bold;
+        }
+        /* Popup box BEGIN */
+
+
     </style>
 </head>
 <body>
     <div class="v130_0">
-         <img id="myCanvas2" src="../../Resourses/images/rgb.jpg"></img>
-            <img id="myCanvas1" src="../../Resourses/images/HSLColor.jpg"></img>
+        <img id="myCanvas2" src="../../Resourses/images/rgb.jpg"></img>
+        <img id="myCanvas1" src="../../Resourses/images/HSLColor.jpg"></img>
         <span class="v130_99" id="v130_99">HSL</span>
         <span class="v130_98" id="v130_98">RGB</span>
         <span class="v130_8">Color model</span>
-        <div class="v130_9">
-            <div class="v130_10">
-            </div>
-            <span class="v130_11">Back</span>
-        </div>
         <div class="v130_12">
             <div class="v130_13"></div>
-            <span class="v130_44">Brightness</span>
+            <span class="v130_44">Lightness</span>
             <input id="inc" class="v10_38" type="number" value="50" min="0" max="100">
-            @using (Html.BeginForm("convert", "ColorModelM",FormMethod.Post,new { enctype = "multipart/form-data" }))
+            @using (Html.BeginForm("convert", "ColorModelM", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
                 <input type="file" id="userFIle" name="userFile" class="v130_20" />
-                <input type="submit" value="Upload" class="v130_53"/>
-            }
+                <input type="submit" name="submit" value="Upload" class="v130_54" />}
 
             <div class="v130_49" id="v130_49">
                 <span class="v130_53">Draw</span>
@@ -419,7 +507,7 @@
                 </div>
             </a>
         </div>
-        <div class="v130_55">
+        <div class="v130_55" id="v130_55">
             <div class="v130_56"></div>
             <div class="v130_57"></div>
             <div class="v130_58"></div>
@@ -427,7 +515,31 @@
         <span class="v130_73">HSL</span>
         <span class="v130_74" id="v130_74">RGB</span>
     </div>
-    <script>window.addEventListener('load', function () {
+    <a class="trigger_popup_fricc">Click here to show the popup</a>
+
+    <div class="hover_bkgr_fricc" id="hover_bkgr_fricc">
+        <span class="helper" id="helper"></span>
+        <div>
+            <div class="popupCloseButton" id="popupCloseButton">&times;</div>
+            <p>
+                In color theory, a color scheme is the choice of colors used in various artistic and design contexts. For example, the "Achromatic" use of a white background with black text is an example of a basic and commonly default color scheme in web design.
+                Color schemes are used to create style and appeal. Colors that create an aesthetic feeling when used together will commonly accompany each other in color schemes. A basic color scheme will use two colors that look appealing together. More advanced color schemes involve several related colors in "Analogous" combination, for example, text with such colors as red, yellow, and orange arranged together on a black background in a magazine article. The addition of light blue creates an "Accented Analogous" color scheme.
+                Use of the phrase color scheme may also and commonly does refer to choice and use of colors used outside typical aesthetic media and context, although may still be used for purely aesthetic effect as well as for purely practical reasons. This most typically refers to color patterns and designs as seen on vehicles, particularly those used in the military when concerning color patterns and designs used for identification of friend or foe, identification of specific military units, or as camouflage. In hotel room designs, the relationship between preferences of color schemes and gender was detected. Male guests tend to prefer masculine color schemes, while female guests favor feminine color schemes.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('v130_55').onclick = function () {
+            document.getElementById('hover_bkgr_fricc').style.display = 'block';
+        }
+        document.getElementById('hover_bkgr_fricc').onclick = function () {
+            document.getElementById('hover_bkgr_fricc').style.display = 'none';
+        }
+        document.getElementById('popupCloseButton').onclick = function () {
+            document.getElementById('hover_bkgr_fricc').style.display = 'none';
+        }
+        window.addEventListener('load', function () {
             document.querySelector('input[type="file"]').addEventListener('change', function () {
                 if (this.files && this.files[0]) {
                     /*var img = document.getElementById('myCanvas2');
@@ -523,7 +635,6 @@
             var hsl = rgbToHsl(pixelData[0], pixelData[1], pixelData[2]);
             var hue = hsl.h * 360;
             text.innerHTML = "h = " + hue + " s = " + hsl.s + " l = " + hsl.l;
-        }
-</script>
+        }</script>
 </body>
 </html>

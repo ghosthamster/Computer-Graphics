@@ -1,19 +1,200 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<style>
-    #e11_472 {
-        overflow: hidden;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        background-color: rgba(28, 73, 121, 1);
-        opacity: 1;
-        width: 242px;
-        height: 38px;
-        border-radius: 4px;
-        position: absolute;
-        top: 530px;
-        left: 11px;
-    }
-</style>
-<a href="/Fractal/"><div id="e11_472"><span id="e11_473">fractal</span></div></a>
-<a href="/ColorModelM/"><div id="e11_472"><span id="e11_473">Color models</span></div></a>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Avenir&display=swap" rel="stylesheet" />
+    <link href="./css/main.css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <style>
+
+        #e1_2 {
+            overflow: hidden;
+            background-color: rgba(239.00000095367432, 242.00000077486038, 244.0000006556511, 1);
+            opacity: 1;
+            width: 1152px;
+            height: 700px;
+            position: absolute;
+        }
+
+        #e7_0 {
+            opacity: 1;
+            width: 238px;
+            height: 235px;
+            position: absolute;
+            left: 145px;
+            top: 266px;
+        }
+
+        #e5_5 {
+            opacity: 1;
+            width: 177px;
+            height: 168px;
+            position: absolute;
+            left: 31px;
+            top: 0px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #e5_11 {
+            color: rgba(0, 0, 0, 0.75);
+            opacity: 1;
+            width: 238px;
+            height: 45px;
+            position: absolute;
+            left: 0px;
+            top: 190px;
+            font-family: Avenir;
+            text-align: center;
+            font-size: 35px;
+            letter-spacing: 2;
+            line-height: undefined;
+        }
+
+        #e7_1 {
+            opacity: 1;
+            width: 219px;
+            height: 290px;
+            position: absolute;
+            left: 466px;
+            top: 266px;
+        }
+
+        #e5_4 {
+            background-color: rgba(196.00000351667404, 196.00000351667404, 196.00000351667404, 1);
+            opacity: 1;
+            width: 177px;
+            height: 168px;
+            position: absolute;
+            left: 21px;
+            top: 0px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        #e5_9 {
+            opacity: 1;
+            width: 177px;
+            height: 168px;
+            position: absolute;
+            left: 21px;
+            top: 0px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #e5_12 {
+            color: rgba(0, 0, 0, 0.75);
+            opacity: 1;
+            width: 219px;
+            height: 96px;
+            position: absolute;
+            left: 0px;
+            top: 194px;
+            font-family: Avenir;
+            text-align: center;
+            font-size: 35px;
+            letter-spacing: 2;
+            line-height: undefined;
+        }
+
+        #e7_2 {
+            opacity: 1;
+            width: 252px;
+            height: 283px;
+            position: absolute;
+            left: 762px;
+            top: 266px;
+        }
+
+        #e5_10 {
+            opacity: 1;
+            width: 180px;
+            height: 168px;
+            position: absolute;
+            left: 36px;
+            top: 0px;
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
+            border-bottom-left-radius: 18px;
+            border-bottom-right-radius: 18px;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #e5_13 {
+            color: rgba(0, 0, 0, 0.75);
+            opacity: 1;
+            width: 252px;
+            height: 96px;
+            position: absolute;
+            left: 0px;
+            top: 187px;
+            font-family: Avenir;
+            text-align: center;
+            font-size: 35px;
+            letter-spacing: 2;
+            line-height: undefined;
+        }
+
+        #e7_3 {
+            color: rgba(0, 0, 0, 0.75);
+            opacity: 1;
+            width: 484px;
+            height: 56px;
+            position: absolute;
+            left: 359px;
+            top: 97px;
+            font-family: Avenir;
+            text-align: center;
+            font-size: 35px;
+            letter-spacing: 2;
+            line-height: undefined;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="e1_2">
+        <a href="/Fractal/">
+            <div id="e7_0">
+                <img src="../../Resourses/images/erectangle_2.png" id="e5_5"></img>
+                <span id="e5_11">Newton fractal</span>
+            </div>
+        </a>
+        <div id="e7_1">
+            <a href="/ColorModelM/">
+                <div id="e5_4"></div>
+                <img src="../../Resourses/images/erectangle_4.png" id="e5_9"></img>
+                <span id="e5_12">
+                    Color models
+                    RGB/HSL
+                </span>
+            </a>
+        </div>
+        <div id="e7_2">
+            <a href="/Affin/">
+                <img src="../../Resourses/images/erectangle_5.png" id="e5_10"></img>
+                <span id="e5_13">
+                    Hexagon
+                    transformations
+                </span>
+            </a>
+        </div>
+        <span id="e7_3">COMPUTER GRAPHICS</span>
+    </div>
+</body>
+</html>
